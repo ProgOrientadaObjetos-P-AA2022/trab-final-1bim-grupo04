@@ -11,4 +11,29 @@ package paquete03;
  */
 public class Barrio {
     
+    private String nombre;
+    private String referencia;
+
+    public Enfermero(String nom, String r) {
+        nombre = nom;
+        referencia = r;
+    }
+
+    public void establecerNombre(String n) {
+        nombre = n;
+    }
+
+    public void establecerReferencia(String n) {
+        referencia = n;
+    }
+
+    public String obtenerNombre() {
+        return nombre;
+    }
+
+    public String obtenerReferencia() {
+        return referencia;
+    }
+
 }
+
