@@ -22,8 +22,8 @@ public class Departamento {
     private String ubiEdificio;
     private Constructora constructora;
 
-    public Departamento(Propietario p, double pre, double numM, Barrio b,
-            Ciudad c, Constructora con, double ali, String ne, String ue) {
+    public Departamento(Propietario p, double pre, double numM, double ali,
+            Barrio b, Ciudad c, String ne, String ue, Constructora con) {
         propietario = p;
         precioXm = pre;
         numMetros = numM;
@@ -51,6 +51,10 @@ public class Departamento {
         alicuota = c;
     }
 
+    public void establecerCostoFinal() {
+        costoFinal = ((numMetros * precioXm) + (alicuota * 12));
+    }
+
     public void establecerBarrio(Barrio c) {
         barrio = c;
     }
@@ -69,6 +73,46 @@ public class Departamento {
 
     public void establecerUbiEdificio(String c) {
         ubiEdificio = c;
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public double obtenerPrecioXm() {
+        return precioXm;
+    }
+
+    public double obtenerNumMetros() {
+        return numMetros;
+    }
+
+    public double obtenerAlicuota() {
+        return alicuota;
+    }
+
+    public double obtenerCostoFinal() {
+        return costoFinal;
+    }
+
+    public Barrio obtenerBarrio() {
+        return barrio;
+    }
+
+    public Ciudad obtenerCiudad() {
+        return ciudad;
+    }
+
+    public Constructora obtenerConstructora() {
+        return constructora;
+    }
+
+    public String obtenerNomEdificio() {
+        return nomEdificio;
+    }
+
+    public String obtenerUbiEdificio() {
+        return ubiEdificio;
     }
 
 }

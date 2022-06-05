@@ -32,4 +32,11 @@ public class Barrio implements Serializable {
         return referencia;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("%s - %s\n",
+                 obtenerNombre(),
+                obtenerReferencia());
+        return cadena;
+    }
 }

@@ -43,6 +43,10 @@ public class Casa {
         numMetros = c;
     }
 
+    public void establecerCostoFinal() {
+        costoFinal = precioXm * numMetros;
+    }
+
     public void establecerBarrio(Barrio c) {
         barrio = c;
     }
@@ -58,9 +62,66 @@ public class Casa {
     public void establecerNumCuartos(int c) {
         numCuartos = c;
     }
-    
-    public void establecerCostoFinal(){
-        costoFinal = precioXm * numMetros;
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public double obtenerPrecioMetroCuadrado() {
+        return precioXm;
+    }
+
+    public double obtenerNumeroMetrosCuadrados() {
+        return numMetros;
+    }
+
+    public double obtenerCostoFinal() {
+        return costoFinal;
+    }
+
+    public Barrio obtenerBarrio() {
+        return barrio;
+    }
+
+    public Ciudad obtenerCiudad() {
+        return ciudad;
+    }
+
+    public int obtenerNumeroCuartos() {
+        return numCuartos;
+    }
+
+    public Constructora obtenerConstructoras() {
+        return constructora;
+    }
+
+    @Override
+    public String toString() {
+
+        String cadena = String.format("PROPIETARIO\n"
+                + "Nombres: %s Apellidos: %s - Identificacion: %s\n"
+                + "Precio metro cuadrado: %.2f Numero metros Cuadrados: %.2f  Numero Cuartos: %d Costo final: %.2f\n"
+                + "BARRIO\n"
+                + "Nombre barrio: %s Referencia: %s\n"
+                + "CIUDAD\n"
+                + "Nombre Ciudad: %s Nombre Provincia: %s \n"
+                + "CONSTRUCTORA\n"
+                + "Nombre Constructora: %s Id Empresa: %s\n",
+                 propietario.obtenerNombre(),
+                propietario.obtenerApellido(),
+                propietario.obtenerCedula(),
+                obtenerPrecioMetroCuadrado(),
+                obtenerNumeroMetrosCuadrados(),
+                obtenerNumeroCuartos(),
+                costoFinal,
+                barrio.obtenerNombre(),
+                barrio.obtenerReferencia(),
+                ciudad.obtenerNombre(),
+                ciudad.obtenerProvincia(),
+                constructora.obtenerNombre(),
+                constructora.obtenerID());
+
+        return cadena;
     }
 
 }

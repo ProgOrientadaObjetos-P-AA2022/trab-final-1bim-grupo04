@@ -32,4 +32,12 @@ public class Constructora implements Serializable {
         return id;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("%s - %s\n",
+                obtenerNombre(),
+                obtenerID());
+        return cadena;
+    }
+
 }

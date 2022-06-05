@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author reroes
  */
 public class Ciudad implements Serializable {
-    
+
     private String nombre;
     private String provincia;
 
@@ -31,5 +31,13 @@ public class Ciudad implements Serializable {
     public String obtenerProvincia() {
         return provincia;
     }
-    
+
+    @Override
+    public String toString() {
+        String cadena = String.format("%s - %s\n",
+                obtenerNombre(),
+                obtenerProvincia());
+        return cadena;
+    }
+
 }
