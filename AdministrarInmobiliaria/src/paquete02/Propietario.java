@@ -15,11 +15,10 @@ public class Propietario {
     private String apellido;
     private String cedula;
 
-        public Enfermero(String nom, String ape, String ced) {
+    public Propietario(String nom, String ape, String ced) {
         nombre = nom;
         apellido = ape;
         cedula = ced;
-
     }
 
     public void establecerNombre(String n) {
@@ -30,7 +29,7 @@ public class Propietario {
         apellido = n;
     }
 
-    public void establecerCedula(double n) {
+    public void establecerCedula(String n) {
         cedula = n;
     }
 
@@ -42,9 +41,8 @@ public class Propietario {
         return apellido;
     }
 
-    public double obtenerCedula() {
+    public String obtenerCedula() {
         return cedula;
     }
 
 }
-    
