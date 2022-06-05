@@ -1,10 +1,12 @@
 package paquete04;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Ciudad {
+public class Ciudad implements Serializable {
     
     private String nombre;
     private String provincia;

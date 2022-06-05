@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package paquete02;
-
+import java.io.Serializable;
 /**
  *
  * @author reroes
  */
-public class Propietario {
+public class Propietario implements Serializable {
 
     private String nombre;
     private String apellido;

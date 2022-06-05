@@ -1,10 +1,12 @@
 package paquete05;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Constructora {
+public class Constructora implements Serializable {
 
     private String nombreConstructora;
     private String id;
