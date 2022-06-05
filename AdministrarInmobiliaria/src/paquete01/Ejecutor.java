@@ -18,7 +18,7 @@ import paquete06.Departamento;
  */
 public class Ejecutor {
     
-    Scanner entrada = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     
         String nomEdificio;
         String ubiEdificio;
@@ -28,26 +28,36 @@ public class Ejecutor {
         Constructora constructora;
         double precioXm;
         double numMetros;
-        int op;
+        
         int numCuartos;
 
     public static void main(String[] args) {
+        Ejecutor obj = new Ejecutor();
+        int opc;
+        do{
+            opc = obj.menu();
+            switch (opc) {
+                case 1:
+                    
+            }
+        }while (opc != 0);
         
     }
     
     public int menu() {
-        Scanner entrada = new Scanner(System.in);
+        
         int op;
-        System.out.println("1.Ingresar nueva Casa:               ");
-        System.out.println("2.Ingresar nuevo Departamento:       ");
-        System.out.println("3.Ingresar nuevo Propietario:        ");
-        System.out.println("4.Ingresar nuevo Barrio:             ");
-        System.out.println("5.Ingresar nueva Ciudad:             ");
-        System.out.println("6.Ingresar nueva Constructora:       ");
-        System.out.println("7.Observar Listas:                   ");
-        System.out.println("0.Salir del Programa:                ");
+        System.out.println("Ingrese el número correspondiente a la opción: ");
+        System.out.println("[1].Ingresar nueva Casa:               ");
+        System.out.println("[2].Ingresar nuevo Departamento:       ");
+        System.out.println("[3].Ingresar nuevo Propietario:        ");
+        System.out.println("[4].Ingresar nuevo Barrio:             ");
+        System.out.println("[5].Ingresar nueva Ciudad:             ");
+        System.out.println("[6].Ingresar nueva Constructora:       ");
+        System.out.println("[7].Observar Listas:                   ");
+        System.out.println("[0].Salir del Programa:                ");
 
-        op = entrada.nextInt();
+        op = sc.nextInt();
        
         return op;
     }
