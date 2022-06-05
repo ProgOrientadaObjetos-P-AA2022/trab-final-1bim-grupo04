@@ -67,6 +67,7 @@ public class ArchivoLecturaP {
 
     public void establecerPropietarioBuscado() {
 
+        // Preguntar
         File f = new File(nombreArchivo);
         System.out.println("5");
         while (true) {
