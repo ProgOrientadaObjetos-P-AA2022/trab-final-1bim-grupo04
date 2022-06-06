@@ -20,7 +20,8 @@ public class Casa {
     private Constructora constructora;
     private int numCuartos;
 
-    public Casa(double pmc, double mc,int nc,Propietario p,Barrio b,Ciudad c,Constructora co){
+    public Casa(double pmc, double mc, int nc,
+            Propietario p, Barrio b, Ciudad c, Constructora co){
         precioXm = pmc;
         numMetros = mc;
         numCuartos = nc;

@@ -17,6 +17,7 @@ public class ArchivoEscrituraCasa {
     private ObjectOutputStream salida;
     private Casa registro;
     private ArrayList<Casa> casas;
+    
     public ArchivoEscrituraCasa(String n) {
         nombreArchivo = n;
         establecerCasas();

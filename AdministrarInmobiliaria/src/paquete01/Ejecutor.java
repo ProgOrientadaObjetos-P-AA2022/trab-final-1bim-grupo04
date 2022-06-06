@@ -5,6 +5,8 @@
  */
 package paquete01;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import paquete02.*;
 import paquete03.*;
@@ -108,7 +110,7 @@ public class Ejecutor {
                     barrio = new Barrio(nombre, referencia);
                     ArchivoEscrituraB archivob
                             = new ArchivoEscrituraB("datos/barrios.dat");
-                    System.out.println(archivob.toString());
+                    System.out.println(barrio.toString());
                     archivob.establecerRegistro(barrio);
                     archivob.establecerSalida();
                     break;
@@ -141,7 +143,12 @@ public class Ejecutor {
                     } while (op != 0);
                     op = 7;
                     break;
+                default: 
+                        System.err.println("Ingrese un número de 0 a 7");
+                        System.out.println("----------------------------------");
+                        break;
                 case 0:
+                    System.out.println("--------------------------------------");
                     System.out.println("Fin del programa");
             }
         } while (op != 0);
@@ -151,6 +158,7 @@ public class Ejecutor {
     public static int menu() {
         Scanner entrada1 = new Scanner(System.in);
         int op;
+
         System.out.println("1.Ingresar nueva Casa:");
         System.out.println("2.Ingresar nuevo Departamento:");
         System.out.println("3.Ingresar nuevo Propietario:");
@@ -161,7 +169,6 @@ public class Ejecutor {
         System.out.println("0.Salir del Programa:");
 
         op = entrada1.nextInt();
-
         return op;
     }
 
@@ -203,7 +210,7 @@ public class Ejecutor {
                     propietarioEncontrado);
             return propietarioEncontrado;
         } else {
-            System.out.println("No se ha encontrado ese propietario,"
+            System.out.println("No se ha encontrado el propietario,"
                     + " ingrese nuevo propietario");
             System.out.println("Ingrese nombres del propietario: ");
             nombres = entrada.nextLine();
