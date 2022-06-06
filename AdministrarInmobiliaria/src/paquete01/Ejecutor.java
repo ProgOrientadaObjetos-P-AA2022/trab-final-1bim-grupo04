@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete01;
 
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import paquete02.*;
 import paquete03.*;
 import paquete04.*;
 import paquete05.*;
 import paquete06.*;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -110,7 +104,7 @@ public class Ejecutor {
                     barrio = new Barrio(nombre, referencia);
                     ArchivoEscrituraB archivob
                             = new ArchivoEscrituraB("datos/barrios.dat");
-                    System.out.println(barrio.toString());
+                    System.out.println(archivob.toString());
                     archivob.establecerRegistro(barrio);
                     archivob.establecerSalida();
                     break;
@@ -143,12 +137,11 @@ public class Ejecutor {
                     } while (op != 0);
                     op = 7;
                     break;
-                default: 
-                        System.err.println("Ingrese un número de 0 a 7");
-                        System.out.println("----------------------------------");
-                        break;
+                default:
+                    System.err.println("Ingrese un número del 0 al 7");
+                    System.out.println("-------------------------------------");
+                    break;
                 case 0:
-                    System.out.println("--------------------------------------");
                     System.out.println("Fin del programa");
             }
         } while (op != 0);
@@ -158,7 +151,7 @@ public class Ejecutor {
     public static int menu() {
         Scanner entrada1 = new Scanner(System.in);
         int op;
-
+        try{
         System.out.println("1.Ingresar nueva Casa:");
         System.out.println("2.Ingresar nuevo Departamento:");
         System.out.println("3.Ingresar nuevo Propietario:");
@@ -170,6 +163,12 @@ public class Ejecutor {
 
         op = entrada1.nextInt();
         return op;
+        } catch (InputMismatchException ex) {
+            System.err.println("Debe ingresar "
+                    + "obligatoriamente un número entero.");
+            System.out.println("------------------------------------------");
+        }
+        return op = 0;
     }
 
     public static int menu2() {
@@ -210,7 +209,7 @@ public class Ejecutor {
                     propietarioEncontrado);
             return propietarioEncontrado;
         } else {
-            System.out.println("No se ha encontrado el propietario,"
+            System.out.println("No se ha encontrado ese propietario,"
                     + " ingrese nuevo propietario");
             System.out.println("Ingrese nombres del propietario: ");
             nombres = entrada.nextLine();
@@ -362,6 +361,9 @@ public class Ejecutor {
                 System.out.printf("%s", lecturaco.toString());
                 lecturaco.cerrarArchivo();
                 break;
+            default:
+                System.err.println("Ingrese un número válido");
+                System.out.println("-----------------------------------------");
         }
 
     }
