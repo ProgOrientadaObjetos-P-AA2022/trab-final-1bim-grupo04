@@ -1,5 +1,6 @@
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -9,7 +10,7 @@ import paquete05.Constructora;
  *
  * @author reroes
  */
-public class Casa {
+public class Casa implements Serializable {
 
     private Propietario propietario;
     private double precioXm;
@@ -20,8 +21,7 @@ public class Casa {
     private Constructora constructora;
     private int numCuartos;
 
-    public Casa(double pmc, double mc, int nc,
-            Propietario p, Barrio b, Ciudad c, Constructora co){
+    public Casa(double pmc, double mc,int nc,Propietario p,Barrio b,Ciudad c,Constructora co){
         precioXm = pmc;
         numMetros = mc;
         numCuartos = nc;

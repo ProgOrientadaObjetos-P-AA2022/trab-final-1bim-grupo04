@@ -36,7 +36,7 @@ public class ArchivoLecturaDep {
 
     public void establecerDepartamento() {
         departamentos = new ArrayList<>();
-        File f = new File(obtenerNombreArchivo());
+        File f = new File(nombreArchivo);
         if (f.exists()) {
 
             while (true) {
@@ -69,7 +69,7 @@ public class ArchivoLecturaDep {
 
     @Override
     public String toString() {
-        String cadena = "Propietarios\n";
+        String cadena = "Departamentos: \n";
         for (int i = 0; i < departamentos.size(); i++) {
             cadena = String.format("%s(%d) Informacion del Departamento\n"
                     + "PROPIETARIO\n"
@@ -109,9 +109,7 @@ public class ArchivoLecturaDep {
                     departamentos.get(i).obtenerCiudad().obtenerProvincia(),
                     departamentos.get(i).obtenerConstructora().obtenerNombre(),
                     departamentos.get(i).obtenerConstructora().obtenerID());
-
         }
-
         return cadena;
     }
 

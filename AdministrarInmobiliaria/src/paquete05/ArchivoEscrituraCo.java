@@ -65,7 +65,7 @@ public class ArchivoEscrituraCo {
         return nombreArchivo;
     }
 
-    public ArrayList<Constructora> obtenerConstructoras() {
+    public ArrayList<Constructora> obtenerPropietarios() {
         return constructoras;
     }
 

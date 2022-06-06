@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package paquete04;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
  * @author USUARIO
  */
 public class ArchivoEscrituraC {
-
     private String nombreArchivo;
     private ObjectOutputStream salida;
     private Ciudad registro;
@@ -83,4 +81,6 @@ public class ArchivoEscrituraC {
         }
     }
 
+    
+    
 }

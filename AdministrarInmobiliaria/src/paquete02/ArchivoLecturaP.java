@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package paquete02;
 
 import java.io.EOFException;
@@ -68,10 +72,12 @@ public class ArchivoLecturaP {
             if (f.exists()) {
 
                 try {
-                    Propietario registro = (Propietario) entrada.readObject();
+                    Propietario registro = (Propietario) entrada.readObject(); 
 
-                    if (registro.obtenerCedula().equals(cedula)) {
-
+                    if (registro.obtenerCedula().equals(cedula)) { 
+                        //compara lo que ingresa el usuario con lo que esta 
+                        //dentro del archivo
+                        
                         propietarioBuscado = registro;
 
                         break;
@@ -97,7 +103,7 @@ public class ArchivoLecturaP {
         return nombreArchivo;
     }
 
-    public String obtenerIdentificador() {
+    public String obtenerCedula() {
         return cedula;
     }
 

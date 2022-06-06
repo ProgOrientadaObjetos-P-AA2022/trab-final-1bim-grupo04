@@ -35,7 +35,7 @@ public class Barrio implements Serializable {
     @Override
     public String toString() {
         String cadena = String.format("%s - %s\n",
-                 obtenerNombre(),
+                obtenerNombre(),
                 obtenerReferencia());
         return cadena;
     }

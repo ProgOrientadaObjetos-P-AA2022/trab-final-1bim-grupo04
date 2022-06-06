@@ -1,12 +1,17 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package paquete01;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import paquete02.*;
 import paquete03.*;
 import paquete04.*;
 import paquete05.*;
 import paquete06.*;
-import java.util.InputMismatchException;
 
 /**
  *
@@ -16,7 +21,7 @@ public class Ejecutor {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        
+
         //Datos por teclado
         String nomEdificio;
         String ubiEdificio;
@@ -24,7 +29,7 @@ public class Ejecutor {
         Barrio barrio;
         Ciudad ciudad;
         Constructora constructora;
-        
+
         //calculos
         double precioXm;
         double numMetros;
@@ -42,9 +47,11 @@ public class Ejecutor {
                     constructora = encontrarConstructoraB();
                     System.out.println("Ingrese el valor del metro cuadrado: ");
                     precioXm = entrada.nextDouble();
-                    System.out.println("Ingrese el numero de metros cuadrados de la casa: ");
+                    System.out.println("Ingrese el numero de metros "
+                            + "cuadrados de la casa: ");
                     numMetros = entrada.nextDouble();
-                    System.out.println("Ingrese el numero de cuartos de la casa: ");
+                    System.out.println("Ingrese el "
+                            + "numero de cuartos de la casa: ");
                     numCuartos = entrada.nextInt();
                     Casa casa = new Casa(precioXm, numMetros, numCuartos,
                             propietario, barrio, ciudad, constructora);
@@ -61,7 +68,7 @@ public class Ejecutor {
                     constructora = encontrarConstructoraB();
                     System.out.println("Ingrese el precio por metro cuadrado: ");
                     precioXm = entrada.nextDouble();
-                    System.out.println("Ingrese el numero de metros cuadrados: ");
+                    System.out.println("Ingrese el numero de metros cuadrados:");
                     numMetros = entrada.nextDouble();
                     System.out.println("Ingrese valor alicuota mensual: ");
                     Double valorAlicuota = entrada.nextDouble();
@@ -84,7 +91,8 @@ public class Ejecutor {
                     String nombresPropietario = entrada.nextLine();
                     System.out.println("Ingrese apellidos del propietario: ");
                     String apellidosPropietario = entrada.nextLine();
-                    System.out.println("Ingrese identificacion del propietario(dni): ");
+                    System.out.println("Ingrese identificacion del "
+                            + "propietario(dni): ");
                     String identificacionPropietario = entrada.nextLine();
                     propietario
                             = new Propietario(nombresPropietario,
@@ -104,7 +112,7 @@ public class Ejecutor {
                     barrio = new Barrio(nombre, referencia);
                     ArchivoEscrituraB archivob
                             = new ArchivoEscrituraB("datos/barrios.dat");
-                    System.out.println(archivob.toString());
+                    System.out.println(barrio.toString());
                     archivob.establecerRegistro(barrio);
                     archivob.establecerSalida();
                     break;
@@ -116,6 +124,7 @@ public class Ejecutor {
                     ciudad = new Ciudad(nombreCiudad, provincia);
                     ArchivoEscrituraC archivociu
                             = new ArchivoEscrituraC("datos/ciudades.dat");
+                    System.out.println(ciudad.toString());
                     archivociu.establecerRegistro(ciudad);
                     archivociu.establecerSalida();
                     break;
@@ -125,8 +134,10 @@ public class Ejecutor {
                     String nombreConstructora = entrada.nextLine();
                     System.out.println("Ingrese id de la constructora:");
                     String idEmpresa = entrada.nextLine();
-                    Constructora c1 = new Constructora(nombreConstructora, idEmpresa);
-                    ArchivoEscrituraCo archivocons = new ArchivoEscrituraCo("datos/constructoras.dat");
+                    Constructora c1 = new Constructora(nombreConstructora, 
+                            idEmpresa);
+                    ArchivoEscrituraCo archivocons = 
+                            new ArchivoEscrituraCo("datos/constructoras.dat");
                     archivocons.establecerRegistro(c1);
                     archivocons.establecerSalida();
                     break;
@@ -151,37 +162,45 @@ public class Ejecutor {
     public static int menu() {
         Scanner entrada1 = new Scanner(System.in);
         int op;
-        try{
-        System.out.println("1.Ingresar nueva Casa:");
-        System.out.println("2.Ingresar nuevo Departamento:");
-        System.out.println("3.Ingresar nuevo Propietario:");
-        System.out.println("4.Ingresar nuevo Barrio:");
-        System.out.println("5.Ingresar nueva Ciudad:");
-        System.out.println("6.Ingresar nueva Constructora:");
-        System.out.println("7.Observar Listas:");
-        System.out.println("0.Salir del Programa:");
+        try {
+            System.out.println("1.Ingresar nueva Casa:");
+            System.out.println("2.Ingresar nuevo Departamento:");
+            System.out.println("3.Ingresar nuevo Propietario:");
+            System.out.println("4.Ingresar nuevo Barrio:");
+            System.out.println("5.Ingresar nueva Ciudad:");
+            System.out.println("6.Ingresar nueva Constructora:");
+            System.out.println("7.Observar Listas:");
+            System.out.println("0.Salir del Programa:");
 
-        op = entrada1.nextInt();
-        return op;
+            op = entrada1.nextInt();
         } catch (InputMismatchException ex) {
             System.err.println("Debe ingresar "
                     + "obligatoriamente un número entero.");
             System.out.println("------------------------------------------");
+            return op = 0;
         }
-        return op = 0;
+        return op;
     }
 
     public static int menu2() {
         Scanner sc = new Scanner(System.in);
         int op;
-        System.out.println("1.Observar Lista de casas:");
-        System.out.println("2.Observar Lista de departamentos:");
-        System.out.println("3.Observar Lista de propietarios:");
-        System.out.println("4.Observar Lista de barrios:");
-        System.out.println("5.Observar Lista de ciudades:");
-        System.out.println("6.Observar Lista de constructoras:");
-        System.out.println("0.Regresar menu anterior:");
-        op = sc.nextInt();
+        try {
+            System.out.println("--------------------------------------");
+            System.out.println("1.Observar Lista de casas:");
+            System.out.println("2.Observar Lista de departamentos:");
+            System.out.println("3.Observar Lista de propietarios:");
+            System.out.println("4.Observar Lista de barrios:");
+            System.out.println("5.Observar Lista de ciudades:");
+            System.out.println("6.Observar Lista de constructoras:");
+            System.out.println("0.Regresar menu anterior:");
+            op = sc.nextInt();
+        } catch (InputMismatchException ex) {
+            System.err.println("Debe ingresar "
+                    + "obligatoriamente un número entero.");
+            System.out.println("------------------------------------");
+            return op = -1;
+        }
         return op;
     }
 
@@ -191,16 +210,19 @@ public class Ejecutor {
         String nombres;
         String apellidos;
         String nombreArchivo = "datos/propietarios.dat";
-        System.out.println("Ingrese identifiacion del propietario: ");
+        System.out.println("Ingrese identificacion del propietario: ");
         identificacion = entrada.nextLine();
 
         Propietario propietarioEncontrado; //declaro la variable
 
-        ArchivoLecturaP lecturaP = new ArchivoLecturaP(nombreArchivo);  //objeto para buscar en
+        ArchivoLecturaP lecturaP = new ArchivoLecturaP(nombreArchivo);
+        //objeto para buscar en el archivo
 
         lecturaP.establecerCedula(identificacion);
+        //se guarda lo que ingreso por teclado
 
         lecturaP.establecerPropietarioBuscado();
+        // llama al metodo que compara la informacion
 
         propietarioEncontrado = lecturaP.obtenerPropietarioBuscado();
 
@@ -221,7 +243,7 @@ public class Ejecutor {
                     = new Propietario(nombres, apellidos, identificacion);
             ArchivoEscrituraP archivop = new ArchivoEscrituraP(nombreArchivo);
             archivop.establecerRegistro(propietario);
-            archivop.establecerSalida();
+            archivop.establecerSalida(); //escribe el objeto en el archivo
             return propietario;
         }
     }
@@ -242,7 +264,8 @@ public class Ejecutor {
             System.out.printf("Barrio encontrado %s\n", barrioEncontrado);
             return barrioEncontrado;
         } else {
-            System.out.println("No se ha encontrado ese barrio, ingrese nuevo barrio");
+            System.out.println("No se ha encontrado ese barrio, "
+                    + "ingrese nuevo barrio");
             System.out.println("Ingrese nombre del barrio: ");
             nombreBarrio = sc.nextLine();
             System.out.println("Ingrese referencia: ");
@@ -256,12 +279,12 @@ public class Ejecutor {
     }
 
     public static Ciudad encontrarCiudadBuscada() {
-        Scanner sc = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
         String nombreCiudad;
         String nombreProvincia;
         String nombreArchivo = "datos/ciudades.dat";
         System.out.println("Ingrese nombre ciudad: ");
-        nombreCiudad = sc.nextLine();
+        nombreCiudad = entrada.nextLine();
         Ciudad ciudadEncontrada;
         ArchivoLecturaC lecturaC = new ArchivoLecturaC(nombreArchivo);
         lecturaC.establecerCedula(nombreCiudad);
@@ -273,9 +296,9 @@ public class Ejecutor {
         } else {
             System.out.println("No se ha encontrado esa ciudad, ingrese nueva ciudad");
             System.out.println("Ingrese nombre de la ciudad: ");
-            nombreCiudad = sc.nextLine();
+            nombreCiudad = entrada.nextLine();
             System.out.println("Ingrese nombre de la provincia: ");
-            nombreProvincia = sc.nextLine();
+            nombreProvincia = entrada.nextLine();
             Ciudad ciudad = new Ciudad(nombreCiudad, nombreProvincia);
             ArchivoEscrituraC archivociu = new ArchivoEscrituraC(nombreArchivo);
             archivociu.establecerRegistro(ciudad);
@@ -361,9 +384,6 @@ public class Ejecutor {
                 System.out.printf("%s", lecturaco.toString());
                 lecturaco.cerrarArchivo();
                 break;
-            default:
-                System.err.println("Ingrese un número válido");
-                System.out.println("-----------------------------------------");
         }
 
     }

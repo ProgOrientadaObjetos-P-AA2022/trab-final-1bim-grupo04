@@ -68,7 +68,7 @@ public class ArchivoEscrituraB {
     public ArrayList<Barrio> obtenerBarrios() {
         return barrios;
     }
-    
+
     public ObjectOutputStream obtenerSalida() {
         return salida;
     }

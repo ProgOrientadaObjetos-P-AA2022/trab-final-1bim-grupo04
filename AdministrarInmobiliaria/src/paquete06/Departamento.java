@@ -1,5 +1,6 @@
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -9,7 +10,7 @@ import paquete05.Constructora;
  *
  * @author reroes
  */
-public class Departamento {
+public class Departamento implements Serializable {
 
     private Propietario propietario;
     private double precioXm;
@@ -113,6 +114,41 @@ public class Departamento {
 
     public String obtenerUbiEdificio() {
         return ubiEdificio;
+    }
+
+    @Override
+    public String toString() {
+
+        String cadena = String.format("PROPIETARIO\n"
+                + "Nombres: %s "
+                + "Apellidos: %s "
+                + "- Identificacion: %s\n"
+                + "Precio metro cuadrado: %.2f "
+                + "Numero metros Cuadrados: %.2f  "
+                + "Costo final: %.2f\n"
+                + "BARRIO\n"
+                + "Nombre barrio: %s "
+                + "Referencia: %s\n"
+                + "CIUDAD\n"
+                + "Nombre Ciudad: %s "
+                + "Nombre Provincia: %s \n"
+                + "CONSTRUCTORA\n"
+                + "Nombre Constructora: %s "
+                + "Id Empresa: %s\n",
+                propietario.obtenerNombre(),
+                propietario.obtenerApellido(),
+                propietario.obtenerCedula(),
+                obtenerPrecioXm(),
+                obtenerNumMetros(),
+                costoFinal,
+                barrio.obtenerNombre(),
+                barrio.obtenerReferencia(),
+                ciudad.obtenerNombre(),
+                ciudad.obtenerProvincia(),
+                constructora.obtenerNombre(),
+                constructora.obtenerID());
+
+        return cadena;
     }
 
 }
