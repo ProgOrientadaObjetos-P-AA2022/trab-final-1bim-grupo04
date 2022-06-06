@@ -67,11 +67,8 @@ public class ArchivoLecturaB {
 
     public void establecerBarrioBuscado() {
 
-        // Preguntar
         File f = new File(nombreArchivo);
-        System.out.println("5");
         while (true) {
-            System.out.println("6");
             if (f.exists()) {
 
                 try {

@@ -20,15 +20,14 @@ public class Casa {
     private Constructora constructora;
     private int numCuartos;
 
-    public Casa(Propietario p, double pre, double numM, Barrio b,
-            Ciudad c, Constructora con, int nc) {
+    public Casa(double pmc, double mc,int nc,Propietario p,Barrio b,Ciudad c,Constructora co){
+        precioXm = pmc;
+        numMetros = mc;
+        numCuartos = nc;
         propietario = p;
-        precioXm = pre;
-        numMetros = numM;
         barrio = b;
         ciudad = c;
-        constructora = con;
-        numCuartos = nc;
+        constructora = co;
     }
 
     public void establecerPropietario(Propietario c) {
@@ -67,11 +66,11 @@ public class Casa {
         return propietario;
     }
 
-    public double obtenerPrecioMetroCuadrado() {
+    public double obtenerPrecioXm() {
         return precioXm;
     }
 
-    public double obtenerNumeroMetrosCuadrados() {
+    public double obtenerNumMetros() {
         return numMetros;
     }
 
@@ -87,7 +86,7 @@ public class Casa {
         return ciudad;
     }
 
-    public int obtenerNumeroCuartos() {
+    public int obtenerNumCuartos() {
         return numCuartos;
     }
 
@@ -99,20 +98,28 @@ public class Casa {
     public String toString() {
 
         String cadena = String.format("PROPIETARIO\n"
-                + "Nombres: %s Apellidos: %s - Identificacion: %s\n"
-                + "Precio metro cuadrado: %.2f Numero metros Cuadrados: %.2f  Numero Cuartos: %d Costo final: %.2f\n"
+                + "Nombres: %s "
+                + "Apellidos: %s "
+                + "- Identificacion: %s\n"
+                + "Precio metro cuadrado: %.2f "
+                + "Numero metros Cuadrados: %.2f  "
+                + "Numero Cuartos: %d "
+                + "Costo final: %.2f\n"
                 + "BARRIO\n"
-                + "Nombre barrio: %s Referencia: %s\n"
+                + "Nombre barrio: %s "
+                + "Referencia: %s\n"
                 + "CIUDAD\n"
-                + "Nombre Ciudad: %s Nombre Provincia: %s \n"
+                + "Nombre Ciudad: %s "
+                + "Nombre Provincia: %s \n"
                 + "CONSTRUCTORA\n"
-                + "Nombre Constructora: %s Id Empresa: %s\n",
-                 propietario.obtenerNombre(),
+                + "Nombre Constructora: %s "
+                + "Id Empresa: %s\n",
+                propietario.obtenerNombre(),
                 propietario.obtenerApellido(),
                 propietario.obtenerCedula(),
-                obtenerPrecioMetroCuadrado(),
-                obtenerNumeroMetrosCuadrados(),
-                obtenerNumeroCuartos(),
+                obtenerPrecioXm(),
+                obtenerNumMetros(),
+                obtenerNumCuartos(),
                 costoFinal,
                 barrio.obtenerNombre(),
                 barrio.obtenerReferencia(),

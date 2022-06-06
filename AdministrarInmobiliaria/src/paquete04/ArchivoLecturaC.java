@@ -65,7 +65,7 @@ public class ArchivoLecturaC {
         cedula = n;
     }
 
-    public void establecerCiudadoBuscada() {
+    public void establecerCiudadBuscada() {
 
         File f = new File(nombreArchivo);
         while (true) {
